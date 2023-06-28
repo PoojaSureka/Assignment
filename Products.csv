@@ -1,0 +1,10 @@
+"product_id","name","category","price"
+1,"dress","womenwear",800
+2,"shirt","menwear",1000
+3,"t-shirt","menwear",1500
+4,"bags","womenwear",900
+5,"earrings","womenwear",250
+6,"shoes","menwear",3400
+7,"boots","womenwear",3600
+8,"watch","menwear",2100
+9,"watch","womenwear",1900
