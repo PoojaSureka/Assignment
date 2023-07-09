@@ -1,0 +1,111 @@
+CREATE TABLE Customers(
+    customer_id INT,
+    name  VARCHAR(14),     
+    age  VARCHAR(5) ,
+    gender  VARCHAR(5)) ;
+    
+
+
+INSERT INTO Customers VALUES ( 1,'Amthhew',24,'M');
+INSERT INTO Customers VALUES ( 2,'Nichole',45,'F');
+INSERT INTO Customers VALUES (3, 'Ronald',23,'M');
+INSERT INTO Customers VALUES ( 4,'Pooja',34,'F');
+INSERT INTO Customers VALUES ( 5,'Sam',43,'M');
+INSERT INTO Customers VALUES ( 6,'Kriti',15, 'M');
+INSERT INTO Customers VALUES ( 7,'Anusha',16,'F');
+INSERT INTO Customers VALUES ( 8,'yashi',17,'F');
+
+
+
+
+CREATE TABLE Products(
+    product_id INT,
+    name  VARCHAR(14),     
+    Category  VARCHAR(15) ,
+    price INT);
+    
+
+
+INSERT INTO Products VALUES ( 1,'dress','womenwear',800);
+INSERT INTO Products VALUES( 2,'shirt','menwear',1000);
+INSERT INTO Products VALUES ( 3,'t-shirt','menwear',1500);
+INSERT INTO Products VALUES ( 4,'bags','womenwear',900);
+INSERT INTO Products VALUES (5, 'earrings','womenwear',250);
+INSERT INTO Products VALUES ( 6,'shoes','menwear',3400);
+INSERT INTO Products VALUES ( 7,'boots','womenwear',3600);
+INSERT INTO Products VALUES ( 8,'watch','menwear',2100);
+INSERT INTO Products VALUES ( 9,'watch','womenwear',1900);
+
+
+CREATE TABLE Sales(
+	transaction_id INT,
+	customer_id INT,
+    product_id INT,
+	date Date,
+	quantity INT,
+	amount INT);
+    
+    INSERT INTO Sales VALUES (1,2,1,'01-01-2023',1,2000);
+INSERT INTO Sales VALUES (2,2,4,'02-01-2023',2,2000);
+INSERT INTO Sales VALUES (3,5,2,'03-01-2023',4,3000);
+INSERT INTO Sales VALUES (4,2,9,'04-01-2023',1,6000);
+INSERT INTO Sales VALUES (5,3,3,'05-01-2023',2,2200);
+INSERT INTO Sales VALUES (6,2,5,'06-01-2023',1,2400);
+INSERT INTO Sales VALUES (7,8,2,'07-01-2023',1,2600);
+INSERT INTO Sales VALUES (8,6,6,'08-01-2023',4,2700);
+INSERT INTO Sales VALUES (2,7,3,'09-01-2023',7,2800);
+
+SELECT * FROM SALES
+
+
+
+
+CREATE TABLE Inventory(
+	product_id INT,
+	stock_count INT);
+    
+INSERT INTO Inventory VALUES (1,20);
+INSERT INTO Inventory VALUES (2,10);
+INSERT INTO Inventory VALUES (3,17);
+INSERT INTO Inventory VALUES (4,25);
+INSERT INTO Inventory VALUES (5,30);
+INSERT INTO Inventory VALUES (6,22);
+INSERT INTO Inventory VALUES (7,10);
+INSERT INTO Inventory VALUES (8,60);
+INSERT INTO Inventory VALUES (9,70);
+
+
+
+
+
+
+/* Task 1: Data Exploration and Cleaning */
+
+/* 1. Load the dataset into a SQL database and examine its structure. */
+SELECT * FROM Customers;
+SELECT * FROM Products;
+SELECT * FROM Sales;
+SELECT * FROM Inventory;
+ 
+
+/* 2. Identify and handle missing values appropriately (e.g., remove rows, impute values). /*
+
+REMOVE ROWS : SELECT * FROM Customers where name IS NOT NULL;
+IMPUTE VALUES: NVL AND COALESCE are used to handle null values in sql.
+NVL takes two arguments where as COALESCE takes more than two values 
+and both returns first non null values
+
+
+/* 3. Perform any necessary data cleaning operations to ensure data integrity and
+consistency */
+Data integrity refers to the overall accuracy, completeness, and reliability of data. 
+It can be specified by the lack of variation between two instances or consecutive updates of a record,
+indicating that your information is error-free.
+
+
+
+### most sold product name is t-shirt and shirt
+### menwear includes 55.56 percent of the product categort and 44.46 is covered under womenwear
+### Prices are high for the category that belongs to menwear
+### maximum revenue is generated from the product shoes
+### 28.30% of people fall under the age bracket of 45, who are using our product
